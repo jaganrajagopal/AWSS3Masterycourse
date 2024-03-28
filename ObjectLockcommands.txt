@@ -1,0 +1,18 @@
+--Upload the  file without any Compliance or Governance Mode
+aws s3api put-object --bucket demoobjectlocktest  --key withoutcompliance.txt  --body withoutcompliance.txt 
+
+--Compliance Mode
+aws s3api put-object --bucket demoobjectlocktest  --key compliance.txt  --body compliance.txt --object-lock-mode COMPLIANCE  --object-lock-retain-until-date 03/20/2024
+
+--Governance mode
+aws s3api put-object --bucket demoobjectlocktest  --key governance.txt  --body governance.txt --object-lock-mode GOVERNANCE  --object-lock-retain-until-date 03/25/2024
+
+
+--LegalHold Enable
+
+aws s3api put-object --bucket demoobjectlocktest  --key withoutcompliance.txt  --body withoutcompliance.txt   --object-lock-legal-hold-status ON
+
+
+aws s3api put-object --bucket demoobjectlocktest  --key compliance.txt --body compliance.txt  --object-lock-legal-hold-status ON
+
+aws s3api put-object --bucket demoobjectlocktest  --key governance.txtt --body governance.txt  --object-lock-legal-hold-status ON
