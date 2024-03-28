@@ -1,10 +1,12 @@
 --Upload the  file without any Compliance or Governance Mode
 aws s3api put-object --bucket demoobjectlocktest  --key withoutcompliance.txt  --body withoutcompliance.txt 
 
---Compliance Mode
+--Compliance Mode 
+--Pass to object-lock-retain-until-date with future date's
 aws s3api put-object --bucket demoobjectlocktest  --key compliance.txt  --body compliance.txt --object-lock-mode COMPLIANCE  --object-lock-retain-until-date 03/20/2024
 
 --Governance mode
+---Pass to object-lock-retain-until-date with future date's
 aws s3api put-object --bucket demoobjectlocktest  --key governance.txt  --body governance.txt --object-lock-mode GOVERNANCE  --object-lock-retain-until-date 03/25/2024
 
 
